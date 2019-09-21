@@ -1,0 +1,22 @@
+{
+  "name": "rclt-bug",
+  "version": "1.0.0",
+  "description": "Possible bug",
+  "author": "Martin Artola",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.6.0"
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^5.0.0",
+    "graphql": "^14.5.7",
+    "relay-compiler": "^5.0.0",
+    "relay-compiler-language-typescript": "^5.0.0",
+    "relay-config": "^5.0.0",
+    "relay-runtime": "^5.0.0",
+    "typescript": "^3.6.3"
+  },
+  "scripts": {
+    "relay": "relay-compiler"
+  }
+}
