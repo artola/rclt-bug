@@ -8,6 +8,8 @@
     "@babel/core": "^7.6.0"
   },
   "devDependencies": {
+    "@types/react-relay": "^5.0.0",
+    "@types/relay-runtime": "^5.0.0",
     "babel-plugin-relay": "^5.0.0",
     "graphql": "^14.5.7",
     "relay-compiler": "^5.0.0",

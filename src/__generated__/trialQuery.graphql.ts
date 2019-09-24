@@ -3,7 +3,6 @@
 import { ConcreteRequest } from "relay-runtime";
 export type trialQueryVariables = {};
 export type trialQueryResponse = {
-    readonly __typename: string;
     readonly hero: {
         readonly name: string;
         readonly homePlanet?: string | null;
@@ -19,7 +18,6 @@ export type trialQuery = {
 
 /*
 query trialQuery {
-  __typename
   hero {
     __typename
     name
@@ -37,18 +35,11 @@ const node: ConcreteRequest = (function(){
 var v0 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "__typename",
-  "args": null,
-  "storageKey": null
-},
-v1 = {
-  "kind": "ScalarField",
-  "alias": null,
   "name": "name",
   "args": null,
   "storageKey": null
 },
-v2 = {
+v1 = {
   "kind": "InlineFragment",
   "type": "Human",
   "selections": [
@@ -61,7 +52,7 @@ v2 = {
     }
   ]
 },
-v3 = {
+v2 = {
   "kind": "InlineFragment",
   "type": "Droid",
   "selections": [
@@ -83,29 +74,6 @@ return {
     "metadata": null,
     "argumentDefinitions": [],
     "selections": [
-      (v0/*: any*/),
-      {
-        "kind": "LinkedField",
-        "alias": null,
-        "name": "hero",
-        "storageKey": null,
-        "args": null,
-        "concreteType": null,
-        "plural": false,
-        "selections": [
-          (v1/*: any*/),
-          (v2/*: any*/),
-          (v3/*: any*/)
-        ]
-      }
-    ]
-  },
-  "operation": {
-    "kind": "Operation",
-    "name": "trialQuery",
-    "argumentDefinitions": [],
-    "selections": [
-      (v0/*: any*/),
       {
         "kind": "LinkedField",
         "alias": null,
@@ -117,8 +85,35 @@ return {
         "selections": [
           (v0/*: any*/),
           (v1/*: any*/),
-          (v2/*: any*/),
-          (v3/*: any*/)
+          (v2/*: any*/)
+        ]
+      }
+    ]
+  },
+  "operation": {
+    "kind": "Operation",
+    "name": "trialQuery",
+    "argumentDefinitions": [],
+    "selections": [
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "name": "hero",
+        "storageKey": null,
+        "args": null,
+        "concreteType": null,
+        "plural": false,
+        "selections": [
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "__typename",
+            "args": null,
+            "storageKey": null
+          },
+          (v0/*: any*/),
+          (v1/*: any*/),
+          (v2/*: any*/)
         ]
       }
     ]
@@ -127,10 +122,10 @@ return {
     "operationKind": "query",
     "name": "trialQuery",
     "id": null,
-    "text": "query trialQuery {\n  __typename\n  hero {\n    __typename\n    name\n    ... on Human {\n      homePlanet\n    }\n    ... on Droid {\n      primaryFunction\n    }\n  }\n}\n",
+    "text": "query trialQuery {\n  hero {\n    __typename\n    name\n    ... on Human {\n      homePlanet\n    }\n    ... on Droid {\n      primaryFunction\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
-(node as any).hash = 'ec75b1c991c6d325943933a515164872';
+(node as any).hash = '54db429b24438a0e1b4b49c8dcbc3106';
 export default node;
